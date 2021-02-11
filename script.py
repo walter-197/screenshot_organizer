@@ -6,26 +6,23 @@ from datetime import date, datetime, time
 home_dir= "/Users/username/Desktop/Screenshots"
 
 #directory path to the folders where screenshots need to be transferred
-dir_one = "/Users/username/Desktop/Semester 2/subject_1/screenshots" #subject 1 
-dir_two = "/Users/username/Desktop/Semester 2/subject_2/screenshots"            #subject 2 
-dir_three = "/Users/username/Desktop/Semester 2/subject_3/screenshots"                 #subject 3 
-dir_four = "/Users/username/Desktop/Semester 2/subject_4/screenshots"               #subject 4 
-dir_five = "/Users/username/Desktop/Semester 2/subject_5/screenshots"                 #subject 5 
-dir_six = "/Users/username/Desktop/Semester 2/subject_6/screenshots"                   #subject 6 
-
-dir_error_check = "/Users/username/Desktop/untitled"
+dir_one = "/Users/username/Desktop/subject_1/screenshots"              #subject 1 
+dir_two = "/Users/username/Desktop/subject_2/screenshots"            #subject 2 
+dir_three = "/Users/username/Desktop/subject_3/screenshots"                 #subject 3 
+dir_four = "/Users/username/Desktop/subject_4/screenshots"               #subject 4 
+dir_five = "/Users/username/Desktop/subject_5/screenshots"                 #subject 5 
 
 
 #time to compare
-class_one_start = time(12,30,00) 
-class_one_end = time(14,30,00)
+class_one_start = time(12,00,00) 
+class_one_end = time(14,00,00)
 class_two_start = time(15,00,00)
 class_two_end = time(17,00,00)
-class_three_start = time(10,00,00)
-class_three_end = time(12,00,00)
+class_three_start = time(18,00,00)
+class_three_end = time(20,00,00)
 
 #date after it starts comparing 
-start_date = date(2021,1,10)
+start_date = date(2021,1,1)
 
 #listing the content of home directory
 files = os.listdir(home_dir)
@@ -52,9 +49,6 @@ for file in files:
             elif (only_time > class_one_start and only_time < class_one_end and day == "Saturday") or (only_time > class_two_start and only_time < class_two_end and day =="Wednesday" ): # subject 5 
                 print("subject 5")
                 shutil.move(home_dir+"/"+file,dir_five+"/"+file)
-            elif (only_time > class_three_start and only_time < class_three_end and day == "Thursday") or (only_time > class_two_start and only_time < class_two_end and day =="Saturday" ): # subject 6 
-                print("subject 6")
-                shutil.move(home_dir+"/"+file,dir_six+"/"+file)
             else:
                 pass
                 #print("Time not bound") --- for screenshots not in the time frame
